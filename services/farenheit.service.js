@@ -2,10 +2,10 @@ const { Service } = require("moleculer");
 
 module.exports = function (broker) {
   return new Service(broker, {
-    name: "second",
+    name: "fahrenheit",
     actions: {
-      test(req) {
-        return "Test running...";
+      convert(req) {
+        return (req.params.temp * 9) / 5 + 32 + " °F";
       },
     },
   });
